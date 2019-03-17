@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <StartupObject>Arifs.JRC.Web.Api.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.3" />
+   
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Arifs.JRC.DataModel\Arifs.JRC.DataModel.csproj" />
+    <ProjectReference Include="..\Arifs.JRC.Repository\Arifs.JRC.Repository.csproj" />
+    <ProjectReference Include="..\Arifs.JRC.RequestModel\Arifs.JRC.RequestModel.csproj" />
+    <ProjectReference Include="..\Arifs.JRC.Service\Arifs.JRC.Service.csproj" />
+    <ProjectReference Include="..\Arifs.JRC.ViewModel\Arifs.JRC.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>
