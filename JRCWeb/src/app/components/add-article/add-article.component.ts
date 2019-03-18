@@ -16,12 +16,14 @@ import { AuthorService } from 'src/app/services/author.service';
 export class AddArticleComponent extends BaseComponent<any> implements OnInit {
  
 public Editor = ClassicEditor;
+
 categories:any[]
 tags:any[]
 authors:any[]
   constructor(public service:ArticleService,private categoryService:CategoryService,private tagService:TagService,private authorService:AuthorService) {
-    super(service)
-    this.model.body='Write your article here'
+    super(service);
+    this.model.body='write here'
+   
    }
 
   ngOnInit() {
@@ -29,9 +31,16 @@ authors:any[]
     this.loadCategories();
     this.loadTags();
     this.loadAuthors();
+    this.generateReferenceId();
   }
 
-
+  generateReferenceId(){
+    this.service.generateReferenceId().subscribe(res=>{
+      console.log(res);
+     this.model.referenceNo=res.referenceNo;
+      
+  });
+  }
   loadCategories(){
     var r=new BaseRequestModel();
     r.page=-1;
@@ -63,7 +72,9 @@ authors:any[]
   }
 
   reset() {
+
     this.model=new Entity();
+  
   }
 
 }

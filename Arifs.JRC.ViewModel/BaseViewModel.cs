@@ -12,9 +12,11 @@ namespace Arifs.JRC.ViewModel
         {
             Id = entity.Id;
             CreatedBy = entity.CreatedBy;
+            Created = entity.Created;
         }
 
         public string Id { get; set; }
         public string CreatedBy { get; set; }
+        public DateTime Created { get; set; }
     }
 }

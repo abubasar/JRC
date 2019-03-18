@@ -29,7 +29,17 @@ namespace Arifs.JRC.Web.Api.Controllers
             var searchResult = service.Search(request);
             return Ok(searchResult);
         }
-       
+
+
+        [Route("reference-no")]
+        [HttpGet]
+        public IActionResult GetReferenceNo()
+        {
+
+            string referenceNo = service.GetReferanceId();
+            return Ok(new { ReferenceNo = referenceNo });
+        }
+
         [HttpPost]
         [Route("add")]
         public IActionResult POST(T model)
@@ -39,6 +49,9 @@ namespace Arifs.JRC.Web.Api.Controllers
             {
                 return BadRequest("Bhai please sob field fill up koren");
             }
+
+            model.Id = Guid.NewGuid().ToString();
+            model.Created=DateTime.Now;
 
             var add = service.Add(model);
             return Ok(add);

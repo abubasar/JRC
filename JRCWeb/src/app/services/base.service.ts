@@ -24,7 +24,9 @@ commandUrl:string
     
   }
 
-  
+  generateReferenceId():Observable<any>{
+    return this.http.get<any>(this.commandUrl+'/reference-no');
+}
 
   delete(id:number){
     return this.http.delete(this.commandUrl+'/delete/'+id);

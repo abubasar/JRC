@@ -17,6 +17,8 @@ import { CategoryService } from './services/category.service';
 import { TagService } from './services/tag.service';
 import { NavComponent } from './components/nav/nav.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { AskFatawaComponent } from './components/ask-fatawa/ask-fatawa.component';
+import { ListFatawaComponent } from './components/list-fatawa/list-fatawa.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ContactComponent } from './components/contact/contact.component';
     ListArticleComponent,
     ArticleDetailComponent,
     NavComponent,
-    ContactComponent
+    ContactComponent,
+    AskFatawaComponent,
+    ListFatawaComponent
   ],
   imports: [
     BrowserModule,

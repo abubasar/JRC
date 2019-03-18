@@ -8,6 +8,10 @@
         </div>
         <div class="card-body">
           <form>
+              <div class="form-group">
+                  <label for="referenceNo">Serial No</label>
+                  <input type="text" class="form-control" name="referenceNo" id="referenceNo" [(ngModel)]="model.referenceNo" readonly>
+                  </div>
            <div class="form-group">
              <label for="title">Title</label>
              <input type="text" id="title" name="title" [(ngModel)]="model.title" class="form-control">

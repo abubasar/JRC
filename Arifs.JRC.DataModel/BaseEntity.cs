@@ -11,5 +11,7 @@ namespace Arifs.JRC.DataModel
         public string Id { get; set; }
 
         public string CreatedBy { get; set; }
+
+        public DateTime Created { get; set; }
     }
 }

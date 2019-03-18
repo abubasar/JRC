@@ -6,5 +6,8 @@ export class BaseRequestModel extends Entity {
     page:number
     perPageCount:number
     keyword:string
+    category:string
+    author:string
+    tag:string
    
 }

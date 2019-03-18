@@ -9,6 +9,7 @@ namespace Arifs.JRC.ViewModel
     {
         public ArticleViewModel(Article article) : base(article)
         {
+            ReferenceNo = article.ReferenceNo;
             Title = article.Title;
             HeadLine = article.HeadLine;
             Body = article.Body;
@@ -17,7 +18,7 @@ namespace Arifs.JRC.ViewModel
                 this.Author = new AuthorViewModel(article.Author);
             }
            
-            PublishDate = article.PublishDate;
+           
 
             if (article.Tag != null)
             {
@@ -30,11 +31,12 @@ namespace Arifs.JRC.ViewModel
             }
 
         }
+
+        public string ReferenceNo { get; set; }
         public string Title { get; set; }
         public string HeadLine { get; set; }
         public string Body { get; set; }
         public AuthorViewModel Author { get; set; }
-        public DateTime PublishDate { get; set; }
         public CategoryViewModel Category { get; set; }
 
         public TagViewModel Tag { get; set; }

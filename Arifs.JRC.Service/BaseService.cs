@@ -92,7 +92,21 @@ namespace Arifs.JRC.Service
             return (Tv)Activator.CreateInstance(typeof(Tv), x);
         }
 
-        
+        public string GetReferanceId()
+        {
+            var referenceNo = "";
+            var queryable = repository.Get();
+            var list = queryable.ToList();
+            int count = list.Count();
+            while (true)
+            {
+                count++;
+                referenceNo = "QA:" + count.ToString().PadLeft(6, '0');
+                return referenceNo;
+            }
+
+
+        }
 
 
     }

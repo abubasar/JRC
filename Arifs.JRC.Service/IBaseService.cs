@@ -19,7 +19,9 @@ namespace Arifs.JRC.Service
         List<Tv> Search(Tr request);
        
         bool Delete(string id);
-       
+
+        string GetReferanceId();
+
 
     }
 }
