@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
@@ -19,6 +19,12 @@ import { NavComponent } from './components/nav/nav.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AskFatawaComponent } from './components/ask-fatawa/ask-fatawa.component';
 import { ListFatawaComponent } from './components/list-fatawa/list-fatawa.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './services/auth.service';
+import { AdminComponent } from './components/admin/admin.component';
+import { TokenInterceptorService } from './token-interceptor.service';
+import { AuthGuard } from './auth.guard';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,10 @@ import { ListFatawaComponent } from './components/list-fatawa/list-fatawa.compon
     NavComponent,
     ContactComponent,
     AskFatawaComponent,
-    ListFatawaComponent
+    ListFatawaComponent,
+    LoginComponent,
+    AdminComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +52,14 @@ import { ListFatawaComponent } from './components/list-fatawa/list-fatawa.compon
     UrlService,
     ArticleService,
     CategoryService,
-    TagService
+    TagService,
+    AuthGuard,
+    AuthService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+    }
   ],
   bootstrap: [AppComponent]
 })

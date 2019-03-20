@@ -5,6 +5,7 @@ import { CategoryService } from 'src/app/services/category.service';
 import { BaseRequestModel } from 'src/app/entities/base-request-model';
 import { AuthorService } from 'src/app/services/author.service';
 import { TagService } from 'src/app/services/tag.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-list-article',
@@ -19,7 +20,7 @@ categories:any[]
 authors:any[]
 tags:any[]
   constructor(service:ArticleService,private categoryService:CategoryService
-    ,private authorService:AuthorService,private tagService:TagService) {
+    ,private authorService:AuthorService,private tagService:TagService,public _authService:AuthService) {
     super(service)
    }
 

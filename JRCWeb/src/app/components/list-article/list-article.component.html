@@ -35,7 +35,9 @@
                 
                   </p>
       
-                  <a  style="cursor: pointer;" class="btn btn-primary" [routerLink]="['/detail/',model.id]">ReadMore</a>
+                  <a   style="cursor: pointer;" class="btn btn-primary" [routerLink]="['/detail/',model.id]">ReadMore</a>
+                  <a  *ngIf="_authService.loggedIn()" style="cursor: pointer;" class="btn btn-primary" [routerLink]="['/update/',model.id]">Edit</a>
+                  <a  *ngIf="_authService.loggedIn()" style="cursor: pointer;" class="btn btn-primary" [routerLink]="['/delete/',model.id]">Delete</a>
             </div>
       </div>
       
