@@ -6,6 +6,8 @@ using Arifs.JRC.DataModel;
 using Arifs.JRC.RequestModel;
 using Arifs.JRC.Service;
 using Arifs.JRC.ViewModel;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Arifs.JRC.Web.Api.Controllers
@@ -39,7 +41,7 @@ namespace Arifs.JRC.Web.Api.Controllers
             string referenceNo = service.GetReferanceId();
             return Ok(new { ReferenceNo = referenceNo });
         }
-
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
         [Route("add")]
         public IActionResult POST(T model)
@@ -56,7 +58,7 @@ namespace Arifs.JRC.Web.Api.Controllers
             var add = service.Add(model);
             return Ok(add);
         }
-
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPut]
         [Route("edit")]
         public IActionResult PUT(T model)
@@ -78,6 +80,7 @@ namespace Arifs.JRC.Web.Api.Controllers
             var model = service.GetById(id);
             return Ok(model);
         }
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Route("delete/{id}")]
         [HttpDelete]
         public IActionResult DELETE(string id)
