@@ -1,3 +1,8 @@
+import { CategoryListComponent } from './components/category/category-list/category-list.component';
+import { AddCategoryComponent } from './components/category/add-category/add-category.component';
+import { AuthorListComponent } from './components/author/author-list/author-list.component';
+import { EditAuthorComponent } from './components/author/edit-author/edit-author.component';
+import { AddAuthorComponent } from './components/author/add-author/add-author.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListArticleComponent } from './components/list-article/list-article.component';
@@ -8,7 +13,12 @@ import { AdminComponent } from './components/admin/admin.component';
 
 import { AuthGuard } from './auth.guard';
 import { AskFatawaComponent } from './components/ask-fatawa/ask-fatawa.component';
-import { TestComponent } from './test/test.component';
+import { EditArticleComponent } from './components/edit-article/edit-article.component';
+import { AddTagComponent } from './components/tag/add-tag/add-tag.component';
+import { EditTagComponent } from './components/tag/edit-tag/edit-tag.component';
+import { TagListComponent } from './components/tag/tag-list/tag-list.component';
+import { EditCategoryComponent } from './components/category/edit-category/edit-category.component';
+
 
 const routes: Routes = [
   {
@@ -16,13 +26,22 @@ const routes: Routes = [
   redirectTo:'/list',
   pathMatch:'full'
     },
-    {path:'log',component:TestComponent},
   {path:'list',component:ListArticleComponent},
   {path:'add',component:AddArticleComponent,canActivate:[AuthGuard]},
   {path:'detail/:id',component:ArticleDetailComponent},
   {path:'contact',component:ContactComponent},
   {path:'admin',component:AdminComponent},
-  {path:'login',component:AskFatawaComponent}
+  {path:'login',component:AskFatawaComponent},
+  {path:'edit-article/:id',component:EditArticleComponent},
+  {path:'add-tag',component:AddTagComponent},
+  {path:'edit-tag/:id',component:EditTagComponent},
+  {path:'tag-list',component:TagListComponent},
+  {path:'add-author',component:AddAuthorComponent},
+  {path:'edit-author/:id',component:EditAuthorComponent},
+  {path:'author-list',component:AuthorListComponent},
+  {path:'add-category',component:AddCategoryComponent},
+  {path:'edit-category/:id',component:EditCategoryComponent},
+  {path:'category-list',component:CategoryListComponent}
 ];
 
 @NgModule({

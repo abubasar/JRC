@@ -24,7 +24,16 @@ import { AuthService } from './services/auth.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { AuthGuard } from './auth.guard';
-import { TestComponent } from './test/test.component';
+import { AddCategoryComponent } from './components/category/add-category/add-category.component';
+import { EditCategoryComponent } from './components/category/edit-category/edit-category.component';
+import { CategoryListComponent } from './components/category/category-list/category-list.component';
+import { AddTagComponent } from './components/tag/add-tag/add-tag.component';
+import { EditTagComponent } from './components/tag/edit-tag/edit-tag.component';
+import { TagListComponent } from './components/tag/tag-list/tag-list.component';
+import { AddAuthorComponent } from './components/author/add-author/add-author.component';
+import { EditAuthorComponent } from './components/author/edit-author/edit-author.component';
+import { AuthorListComponent } from './components/author/author-list/author-list.component';
+import { EditArticleComponent } from './components/edit-article/edit-article.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +47,16 @@ import { TestComponent } from './test/test.component';
     ListFatawaComponent,
     LoginComponent,
     AdminComponent,
-    TestComponent
+    AddCategoryComponent,
+    EditCategoryComponent,
+    CategoryListComponent,
+    AddTagComponent,
+    EditTagComponent,
+    TagListComponent,
+    AddAuthorComponent,
+    EditAuthorComponent,
+    AuthorListComponent,
+    EditArticleComponent
   ],
   imports: [
     BrowserModule,

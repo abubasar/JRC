@@ -30,6 +30,32 @@ createInstance<Entity>(c:new()=>Entity):Entity{
 }
  //query controller start here
  
+
+ edit(){
+  this.service.edit(this.model).subscribe(res=>{
+   // this.router.navigate(['list']);
+    this.reset();
+    console.log('success');
+  },error=>{
+    console.log(error)
+  });
+}
+
+delete(id:number){
+  var result=confirm("Are You sure to delete this");
+  if(result){
+    this.service.delete(id).subscribe(res=>{
+      this.search();
+     // this.router.navigate(['list'])
+    },error=>{
+      console.log(error);
+    })
+  }
+    }
+
+
+
+
  models:T[]
 searchRequest:BaseRequestModel
 

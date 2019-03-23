@@ -18,4 +18,14 @@ export class CategoryService extends BaseService<any> {
    
     return this.http.post<any>('http://localhost:25442/api/category/search',request);
  }
+
+ addCategory(model:any):Observable<any>{
+   
+  return this.http.post<any>('http://localhost:25442/api/category/add',model);
+}
+
+editCategory(model:any):Observable<any>{
+   
+  return this.http.post<any>('http://localhost:25442/api/category/edit',model);
+}
 }

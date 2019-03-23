@@ -1,0 +1,38 @@
+<form>
+  <div class="form-inline">
+     <input class="form-control" type="text" name="keyword" [(ngModel)]="searchRequest.keyword" (keypress)="search()" placeholder="Search By keyword">
+    
+  </div>
+</form>
+
+
+
+<div class="container">
+  <div class="row">
+    <table class="table table-hover">
+      <thead>
+          &nbsp;  <a [routerLink]="['/add-tag']" class="btn btn-info btn-xs float-right"><b>+</b>Add New Tag</a>
+        <tr>
+          <th (click)="sort('name')">Tag Name</th>
+         
+          <th>Actions</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let model of models">
+          <td>{{model.name}}</td>
+         
+          <td> <a class="btn btn-primary" type="button" [routerLink]="['/edit-tag/',model.id]"><i class="fa fa-pencil"></i></a></td>
+          <td> <button class="btn btn-danger" type="button" (click)="delete(model.id)"><i class="fa fa-remove"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<button class="btn btn-primary" (show)="searchRequest.page>1" (click)="previous()">Previous</button>
+<label>Current Page:{{searchRequest.page}}</label>
+<button class="btn btn-primary" (click)="next()">Next</button>
