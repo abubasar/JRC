@@ -19,7 +19,7 @@ export class EditAuthorComponent extends BaseComponent<any> implements OnInit {
   constructor(service:AuthorService,private activatedRoute:ActivatedRoute,private http:HttpClient) {
     super(service)
    }
-author:any
+
   ngOnInit() {
       this.get(this.activatedRoute.snapshot.params.id);
     
@@ -28,7 +28,7 @@ author:any
   get(id:string){
    this.http.get('http://localhost:25442/api/author/get/'+id).subscribe(res=>{
      console.log(res)
-this.author=res;
+this.model=res;
    })
   }
 }

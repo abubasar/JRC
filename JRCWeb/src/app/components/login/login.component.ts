@@ -10,23 +10,13 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 model:any
-  constructor(private _auth:AuthService,private _router:Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
-
-  loginUser(){
-   this._auth.loginUser(this.model)
-   .subscribe(
-    res=>{
-      console.log(res)
-      //jwt 3rd step:save that token in the browsers local storage
-      localStorage.setItem('token',res.token)
-      this._router.navigate(['admin'])
-
-    }, 
-     err=>console.log(err)
-   )
-  }
+ mySlideImages = [1,2,3].map((i)=> `https://picsum.photos/640/480?image=${i}`);
+myCarouselImages =[1,2,3,4,5,6].map((i)=>`https://picsum.photos/640/480?image=${i}`);
+mySlideOptions={items: 1, dots: true, nav: false};
+myCarouselOptions={items: 3, dots: true, nav: true};
 
 }

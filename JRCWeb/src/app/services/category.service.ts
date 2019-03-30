@@ -26,6 +26,6 @@ export class CategoryService extends BaseService<any> {
 
 editCategory(model:any):Observable<any>{
    
-  return this.http.post<any>('http://localhost:25442/api/category/edit',model);
+  return this.http.put<any>('http://localhost:25442/api/category/edit',model);
 }
 }

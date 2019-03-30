@@ -18,6 +18,7 @@ import { AddTagComponent } from './components/tag/add-tag/add-tag.component';
 import { EditTagComponent } from './components/tag/edit-tag/edit-tag.component';
 import { TagListComponent } from './components/tag/tag-list/tag-list.component';
 import { EditCategoryComponent } from './components/category/edit-category/edit-category.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 const routes: Routes = [
@@ -41,7 +42,8 @@ const routes: Routes = [
   {path:'author-list',component:AuthorListComponent},
   {path:'add-category',component:AddCategoryComponent},
   {path:'edit-category/:id',component:EditCategoryComponent},
-  {path:'category-list',component:CategoryListComponent}
+  {path:'category-list',component:CategoryListComponent},
+  {path:'carousal',component:LoginComponent}
 ];
 
 @NgModule({

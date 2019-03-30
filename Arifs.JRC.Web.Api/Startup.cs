@@ -31,7 +31,7 @@ namespace Arifs.JRC.Web.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("Default")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddCors();
             // configure strongly typed settings objects
             var appSettingsSection = Configuration.GetSection("AppSettings");
@@ -61,6 +61,9 @@ namespace Arifs.JRC.Web.Api
             // configure DI for application services
            
             services.AddMvc();
+
+            services.BuildServiceProvider().GetService<DataContext>().Database.Migrate();
+
             services.AddScoped<IUserService, UserService>();
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped(typeof(IBaseService<,,>), typeof(BaseService<,,>));
@@ -80,6 +83,8 @@ namespace Arifs.JRC.Web.Api
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials());
             app.UseMvc();
             app.UseAuthentication();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
         }
     }
 }

@@ -16,9 +16,11 @@ export class ListArticleComponent extends BaseComponent<any> implements OnInit {
   reset() {
     throw new Error("Method not implemented.");
   }
+  myCarouselOptions={items: 1,autoplay:true,loop:true,dots:false, nav: false,rewind:true};
 categories:any[]
 authors:any[]
 tags:any[]
+category:string="All"
   constructor(service:ArticleService,private categoryService:CategoryService
     ,private authorService:AuthorService,private tagService:TagService,public _authService:AuthService) {
     super(service)
@@ -62,6 +64,7 @@ tags:any[]
   }
 
   searchByCategory(name:string){
+    this.category=name
     var r=new BaseRequestModel();
     r.category=name;
     r.orderBy="createdBy"
@@ -72,6 +75,7 @@ tags:any[]
   }
 
   searchByAuthor(name:string){
+    this.category=name
     var r=new BaseRequestModel();
     r.author=name;
     r.orderBy="createdBy"
@@ -82,6 +86,7 @@ tags:any[]
   }
 
   searchByTag(name:string){
+    this.category=name
     var r=new BaseRequestModel();
     r.tag=name;
     r.orderBy="createdBy"
