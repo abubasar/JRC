@@ -58,10 +58,42 @@ delete(id:number){
 
  models:T[]
 searchRequest:BaseRequestModel
+totalCount:number=0
+
+searchForPaging(){
+  var r=new BaseRequestModel();
+  r.page=-1;
+  r.orderBy="createdBy";
+  this.service.search(r).subscribe(res=>{
+  
+for(var i = 0; i < res.length; ++i){
+    
+      this.totalCount++;
+}
+    
+    this.searchRequest.totalPage = Math.ceil(this.totalCount / 10);
+   
+  
+  },error=>{
+    console.log(error)
+  })
+
+}
+
 
 search(){
   this.service.search(this.searchRequest).subscribe(res=>{
+    
     this.models=res;
+  
+
+    
+   
+   
+    if (this.models.length === 0) {
+      console.log('No search result found');
+      alert('No search result found');
+    }
     console.log(this.models);
   },error=>{
     console.log(error)
@@ -83,8 +115,15 @@ this.search();
 }
 
 next(){
-  this.searchRequest.page=this.searchRequest.page+1;
+  if(this.searchRequest.totalPage-this.searchRequest.page>0){
+    this.searchRequest.page=this.searchRequest.page+1;
+  }
   this.search();
 
+}
+
+goto(page: number): void {
+  this.searchRequest.page = page;
+  this.search();
 }
 }

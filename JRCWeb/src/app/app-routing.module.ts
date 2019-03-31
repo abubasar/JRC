@@ -1,3 +1,4 @@
+import { AllArticleComponent } from './components/all-article/all-article.component';
 import { LoginComponent } from './components/login/login.component';
 import { CategoryListComponent } from './components/category/category-list/category-list.component';
 import { AddCategoryComponent } from './components/category/add-category/add-category.component';
@@ -21,6 +22,7 @@ import { TagListComponent } from './components/tag/tag-list/tag-list.component';
 import { EditCategoryComponent } from './components/category/edit-category/edit-category.component';
 
 
+
 const routes: Routes = [
   {
   path:'',
@@ -42,7 +44,9 @@ const routes: Routes = [
   {path:'author-list',component:AuthorListComponent},
   {path:'add-category',component:AddCategoryComponent},
   {path:'edit-category/:id',component:EditCategoryComponent},
-  {path:'category-list',component:CategoryListComponent}
+  {path:'category-list',component:CategoryListComponent},
+  {path:'carousal',component:LoginComponent},
+  {path:'article',component:AllArticleComponent}
 ];
 
 @NgModule({

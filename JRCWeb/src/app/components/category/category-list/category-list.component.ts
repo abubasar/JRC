@@ -21,6 +21,8 @@ categories:any[]
    this.service.searchCategory(this.searchRequest).subscribe(res=>{
      this.categories=res;
      console.log(res)
+     this.search();
+     this.searchForPaging()
    })
   }
 

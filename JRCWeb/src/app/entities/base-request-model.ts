@@ -5,6 +5,8 @@ export class BaseRequestModel extends Entity {
     isAscending:boolean 
     page:number
     perPageCount:number
+    totalPage:number
+    totalCount:number
     keyword:string
     category:string
     author:string

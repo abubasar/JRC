@@ -10,6 +10,7 @@ import { User } from 'src/app/user';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
   model:User
   constructor(private _auth:AuthService,private _router:Router) { 
     this.model=new User();
@@ -31,6 +32,5 @@ export class LoginComponent implements OnInit {
      err=>console.log(err)
    )
   }
-
 }
 

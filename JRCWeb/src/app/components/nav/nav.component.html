@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
   <div class="container">
-      <a class="navbar-brand" [routerLink]="['/home']">ফিকহি ইসলামি</a>
+      <a class="navbar-brand" [routerLink]="['/home']">কুরআন সুন্নাহ ও ফিক্বহে ইসলামীর 
+        আলোকে আধুনিক মাসায়েল</a>
 
   
       <ul class="navbar-nav mr-auto">
@@ -29,10 +30,13 @@
     <a class="nav-link"  [routerLink]="['/contact']">যোগাযোগ</a>
   </li>
   <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" *ngIf="_authService.loggedIn()" [routerLink]="['/article']">Article</a>
+    </li>
+  <li class="nav-item" routerLinkActive="active">
       <a class="nav-link" *ngIf="_authService.loggedIn()" [routerLink]="['/category-list']">Category</a>
     </li>
     <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link" *ngIf="_authService.loggedIn()" [routerLink]="['/author-list']">Author</a>
+      <a class="nav-link" *ngIf="_authService.loggedIn()" [routerLink]="['/author-list']">লেখক</a>
     </li>
     <li class="nav-item" routerLinkActive="active">
       <a class="nav-link" *ngIf="_authService.loggedIn()" [routerLink]="['/tag-list']">Tag</a>

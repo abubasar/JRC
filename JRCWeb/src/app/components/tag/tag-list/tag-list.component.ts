@@ -17,6 +17,7 @@ export class TagListComponent extends BaseComponent<any> implements OnInit {
 
   ngOnInit() {
     this.search();
+    this.searchForPaging();
   }
 
 }

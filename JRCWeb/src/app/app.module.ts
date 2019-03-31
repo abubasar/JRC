@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { OwlModule } from 'ngx-owl-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +35,7 @@ import { AddAuthorComponent } from './components/author/add-author/add-author.co
 import { EditAuthorComponent } from './components/author/edit-author/edit-author.component';
 import { AuthorListComponent } from './components/author/author-list/author-list.component';
 import { EditArticleComponent } from './components/edit-article/edit-article.component';
+import { AllArticleComponent } from './components/all-article/all-article.component';
 
 @NgModule({
   declarations: [
@@ -56,14 +58,17 @@ import { EditArticleComponent } from './components/edit-article/edit-article.com
     AddAuthorComponent,
     EditAuthorComponent,
     AuthorListComponent,
-    EditArticleComponent
+    EditArticleComponent,
+    AllArticleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CKEditorModule
+    CKEditorModule,
+    OwlModule 
+
   ],
   providers: [
     BaseService,

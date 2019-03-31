@@ -7,6 +7,8 @@ import { Entity } from 'src/app/entities/entity';
 import { CategoryService } from 'src/app/services/category.service';
 import { TagService } from 'src/app/services/tag.service';
 import { AuthorService } from 'src/app/services/author.service';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-article',
@@ -20,7 +22,7 @@ public Editor = ClassicEditor;
 categories:any[]
 tags:any[]
 authors:any[]
-  constructor(public service:ArticleService,private categoryService:CategoryService,private tagService:TagService,private authorService:AuthorService) {
+  constructor(private http:HttpClient, private router:Router,public service:ArticleService,private categoryService:CategoryService,private tagService:TagService,private authorService:AuthorService) {
     super(service);
     this.model.body='write here'
    
@@ -75,6 +77,16 @@ authors:any[]
 
     this.model=new Entity();
   
+  }
+
+  saveArticle(model:any){
+    
+    console.log(model.body)
+   this.http.post('http://localhost:25442/api/article/add',model).subscribe(res=>{
+     this.router.navigate(['article']);
+     console.log(res)
+
+   })
   }
 
 }
