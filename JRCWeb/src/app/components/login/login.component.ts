@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/user';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,10 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-model:any
-  constructor(private _auth:AuthService,private _router:Router) { }
+  model:User
+  constructor(private _auth:AuthService,private _router:Router) { 
+    this.model=new User();
+  }
 
   ngOnInit() {
   }
@@ -22,7 +25,7 @@ model:any
       console.log(res)
       //jwt 3rd step:save that token in the browsers local storage
       localStorage.setItem('token',res.token)
-      this._router.navigate(['admin'])
+      this._router.navigate(['list'])
 
     }, 
      err=>console.log(err)
@@ -30,3 +33,4 @@ model:any
   }
 
 }
+

@@ -1,3 +1,4 @@
+import { LoginComponent } from './components/login/login.component';
 import { CategoryListComponent } from './components/category/category-list/category-list.component';
 import { AddCategoryComponent } from './components/category/add-category/add-category.component';
 import { AuthorListComponent } from './components/author/author-list/author-list.component';
@@ -31,7 +32,7 @@ const routes: Routes = [
   {path:'detail/:id',component:ArticleDetailComponent},
   {path:'contact',component:ContactComponent},
   {path:'admin',component:AdminComponent},
-  {path:'login',component:AskFatawaComponent},
+  {path:'login',component:LoginComponent},
   {path:'edit-article/:id',component:EditArticleComponent},
   {path:'add-tag',component:AddTagComponent},
   {path:'edit-tag/:id',component:EditTagComponent},
