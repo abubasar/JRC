@@ -22,7 +22,6 @@ import { AskFatawaComponent } from './components/ask-fatawa/ask-fatawa.component
 import { ListFatawaComponent } from './components/list-fatawa/list-fatawa.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
-import { AdminComponent } from './components/admin/admin.component';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { AuthGuard } from './auth.guard';
 import { AddCategoryComponent } from './components/category/add-category/add-category.component';
@@ -53,7 +52,6 @@ import { FatawaAnswerService } from './services/fatawa-answer.service';
     AskFatawaComponent,
     ListFatawaComponent,
     LoginComponent,
-    AdminComponent,
     AddCategoryComponent,
     EditCategoryComponent,
     CategoryListComponent,

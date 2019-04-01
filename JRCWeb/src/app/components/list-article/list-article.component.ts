@@ -50,6 +50,7 @@ category:string="All"
     r.orderBy="createdBy"
     this.authorService.search(r).subscribe(res=>{
              this.authors=res;
+             
              console.log(res)
     });
   }
@@ -71,6 +72,14 @@ category:string="All"
     r.orderBy="createdBy"
     this.service.search(r).subscribe(res=>{
       this.models=res
+       if (this.models.length === 0) {
+        console.log('No search result found');
+       this.models=[
+         {
+           "headLine":"এখনও কোন লেখা অন্তর্ভুক্ত করা হই  নি"
+         }
+       ]
+      }
       console.log(res)
     })
   }
@@ -82,6 +91,14 @@ category:string="All"
     r.orderBy="createdBy"
     this.service.search(r).subscribe(res=>{
       this.models=res
+       if (this.models.length === 0) {
+        console.log('No search result found');
+       this.models=[
+         {
+           "headLine":"এখনও কোন লেখা অন্তর্ভুক্ত করা হই  নি"
+         }
+       ]
+      }
       console.log(res)
     })
   }
@@ -93,6 +110,14 @@ category:string="All"
     r.orderBy="createdBy"
     this.service.search(r).subscribe(res=>{
       this.models=res
+       if (this.models.length === 0) {
+        console.log('No search result found');
+       this.models=[
+         {
+           "headLine":"এখনও কোন লেখা অন্তর্ভুক্ত করা হই  নি"
+         }
+       ]
+      }
       console.log(res)
     })
   }

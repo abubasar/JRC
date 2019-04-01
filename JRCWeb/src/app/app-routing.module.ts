@@ -14,7 +14,7 @@ import { ListArticleComponent } from './components/list-article/list-article.com
 import { AddArticleComponent } from './components/add-article/add-article.component';
 import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { AdminComponent } from './components/admin/admin.component';
+
 
 import { AuthGuard } from './auth.guard';
 import { AskFatawaComponent } from './components/ask-fatawa/ask-fatawa.component';
@@ -37,24 +37,23 @@ const routes: Routes = [
   {path:'add',component:AddArticleComponent,canActivate:[AuthGuard]},
   {path:'detail/:id',component:ArticleDetailComponent},
   {path:'contact',component:ContactComponent},
-  {path:'admin',component:AdminComponent},
   {path:'login',component:LoginComponent},
-  {path:'edit-article/:id',component:EditArticleComponent},
-  {path:'add-tag',component:AddTagComponent},
-  {path:'edit-tag/:id',component:EditTagComponent},
-  {path:'tag-list',component:TagListComponent},
-  {path:'add-author',component:AddAuthorComponent},
-  {path:'edit-author/:id',component:EditAuthorComponent},
-  {path:'author-list',component:AuthorListComponent},
-  {path:'add-category',component:AddCategoryComponent},
-  {path:'edit-category/:id',component:EditCategoryComponent},
-  {path:'category-list',component:CategoryListComponent},
-  {path:'article',component:AllArticleComponent},
+  {path:'edit-article/:id',component:EditArticleComponent,canActivate:[AuthGuard]},
+  {path:'add-tag',component:AddTagComponent,canActivate:[AuthGuard]},
+  {path:'edit-tag/:id',component:EditTagComponent,canActivate:[AuthGuard]},
+  {path:'tag-list',component:TagListComponent,canActivate:[AuthGuard]},
+  {path:'add-author',component:AddAuthorComponent,canActivate:[AuthGuard]},
+  {path:'edit-author/:id',component:EditAuthorComponent,canActivate:[AuthGuard]},
+  {path:'author-list',component:AuthorListComponent,canActivate:[AuthGuard]},
+  {path:'add-category',component:AddCategoryComponent,canActivate:[AuthGuard]},
+  {path:'edit-category/:id',component:EditCategoryComponent,canActivate:[AuthGuard]},
+  {path:'category-list',component:CategoryListComponent,canActivate:[AuthGuard]},
+  {path:'article',component:AllArticleComponent,canActivate:[AuthGuard]},
   {path:'fatawa',component:AskFatawaComponent},
   {path:'list-fatawa',component:ListFatawaComponent},
-  {path:'add-fatawa-answer',component:AddFatawaAnswerComponent},
-  {path:'edit-fatawa-answer/:id',component:EditFatawaAnswerComponent},
-  {path:'list-fatawa-answer',component:ListFatawaAnswerComponent}
+  {path:'add-fatawa-answer',component:AddFatawaAnswerComponent,canActivate:[AuthGuard]},
+  {path:'edit-fatawa-answer/:id',component:EditFatawaAnswerComponent,canActivate:[AuthGuard]},
+  {path:'list-fatawa-answer',component:ListFatawaAnswerComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({

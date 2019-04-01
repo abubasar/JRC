@@ -6,7 +6,7 @@
       <div class="col-sm-10">
         <div>
             <form class="form-inline mt-4">
-                <input type="text" class="form-control" name="keyword" [(ngModel)]="searchRequest.keyword" (keypress)="search()" placeholder="SEARCH"><br>
+                <input type="text" class="form-control" name="keyword" [(ngModel)]="searchRequest.keyword" (keypress)="search()" placeholder="বাংলায় সার্চ করুন"><br>
               
               </form>
         </div>
@@ -40,13 +40,5 @@
    
       </div>
   
-      <div class="col-sm-2">
-          <h2 class="my-4">Tags</h2>
-          <div *ngFor="let tag of tags">
-           
-          <a style="cursor: pointer;" (click)="searchByTag(tag.name)" class="bg-light">{{tag.name}}</a>
-         
-          </div>
-  
-      </div>
+     
   </div>

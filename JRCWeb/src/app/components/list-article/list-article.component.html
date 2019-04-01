@@ -20,15 +20,15 @@
     
     <div class="col-sm-3">
         <form class="form-inline mt-4">
-            <input type="text" class="form-control" name="keyword" [(ngModel)]="searchRequest.keyword" (keypress)="search()" placeholder="SEARCH"><br>
+            <input type="text" class="form-control" name="keyword" [(ngModel)]="searchRequest.keyword" (keypress)="search()" placeholder="বাংলায় সার্চ করুন"><br>
           
           </form>
-      <h2 class="my-4">Categories</h2>
+      <h2 class="my-4">বিভাগ</h2>
         <div *ngFor="let category of categories" class="list-group">
          <a style="cursor: pointer;" (click)="searchByCategory(category.name)" class="list-group-item">{{category.name}}</a>
           </div>
 
-          <h2 class="my-4">Authors</h2>
+          <h2 class="my-4">লেখকগণ</h2>
           <div *ngFor="let author of authors" class="list-group">
            <a style="cursor: pointer;" (click)="searchByAuthor(author.name)" class="list-group-item">{{author.name}}</a>
             </div>
@@ -41,7 +41,7 @@
         <div class="card mt-4" *ngFor="let model of models">
      
             <div class="card-body">
-                <h5  class="card-title text-success">{{model.title}}</h5>
+                <h5 class="card-title text-success"> <a style="cursor: pointer;" [routerLink]="['/detail/',model.id]">{{model.title}}</a></h5>
                
                 <p class="card-text">
                 {{model.headLine}}
@@ -52,9 +52,6 @@
                 
                   </p>
       
-                  <a   style="cursor: pointer;" class="btn btn-primary" [routerLink]="['/detail/',model.id]">ReadMore</a>
-                  <a  *ngIf="_authService.loggedIn()" style="cursor: pointer;" class="btn btn-primary" [routerLink]="['/edit-article/',model.id]">Edit</a>
-                  <a  *ngIf="_authService.loggedIn()" style="cursor: pointer;" class="btn btn-primary" (click)="delete(model.id)">Delete</a>
             </div>
       </div>
       
@@ -65,7 +62,7 @@
     </div>
 
     <div class="col-sm-2">
-        <h2 class="my-4">Tags</h2>
+        <h2 class="my-4">প্রসঙ্গসমূহ</h2>
         <div *ngFor="let tag of tags">
          
         <a style="cursor: pointer;" (click)="searchByTag(tag.name)" class="bg-light">{{tag.name}}</a>
