@@ -36,6 +36,7 @@ import { EditAuthorComponent } from './components/author/edit-author/edit-author
 import { AuthorListComponent } from './components/author/author-list/author-list.component';
 import { EditArticleComponent } from './components/edit-article/edit-article.component';
 import { AllArticleComponent } from './components/all-article/all-article.component';
+import { FatawaService } from './services/fatawa.service';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { AllArticleComponent } from './components/all-article/all-article.compon
     ArticleService,
     CategoryService,
     TagService,
+    FatawaService,
     AuthGuard,
     AuthService,
     {

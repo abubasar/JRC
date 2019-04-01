@@ -46,7 +46,8 @@ const routes: Routes = [
   {path:'edit-category/:id',component:EditCategoryComponent},
   {path:'category-list',component:CategoryListComponent},
   {path:'carousal',component:LoginComponent},
-  {path:'article',component:AllArticleComponent}
+  {path:'article',component:AllArticleComponent},
+  {path:'fatawa',component:AskFatawaComponent}
 ];
 
 @NgModule({

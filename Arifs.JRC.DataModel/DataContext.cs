@@ -17,5 +17,6 @@ namespace Arifs.JRC.DataModel
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<Author> Authors { get; set; }
+        public virtual DbSet<Fatawa> Fatawas { get; set; }
     }
 }

@@ -21,7 +21,6 @@ namespace Arifs.JRC.Service
         bool Delete(string id);
 
         string GetReferanceId();
-
-
+        
     }
 }
