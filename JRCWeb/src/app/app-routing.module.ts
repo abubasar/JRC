@@ -1,3 +1,6 @@
+import { ListFatawaComponent } from './components/list-fatawa/list-fatawa.component';
+import { ListFatawaAnswerComponent } from './components/list-fatawa-answer/list-fatawa-answer.component';
+import { AddFatawaAnswerComponent } from './components/add-fatawa-answer/add-fatawa-answer.component';
 import { AllArticleComponent } from './components/all-article/all-article.component';
 import { LoginComponent } from './components/login/login.component';
 import { CategoryListComponent } from './components/category/category-list/category-list.component';
@@ -20,6 +23,7 @@ import { AddTagComponent } from './components/tag/add-tag/add-tag.component';
 import { EditTagComponent } from './components/tag/edit-tag/edit-tag.component';
 import { TagListComponent } from './components/tag/tag-list/tag-list.component';
 import { EditCategoryComponent } from './components/category/edit-category/edit-category.component';
+import { EditFatawaAnswerComponent } from './components/edit-fatawa-answer/edit-fatawa-answer.component';
 
 
 
@@ -45,9 +49,12 @@ const routes: Routes = [
   {path:'add-category',component:AddCategoryComponent},
   {path:'edit-category/:id',component:EditCategoryComponent},
   {path:'category-list',component:CategoryListComponent},
-  {path:'carousal',component:LoginComponent},
   {path:'article',component:AllArticleComponent},
-  {path:'fatawa',component:AskFatawaComponent}
+  {path:'fatawa',component:AskFatawaComponent},
+  {path:'list-fatawa',component:ListFatawaComponent},
+  {path:'add-fatawa-answer',component:AddFatawaAnswerComponent},
+  {path:'edit-fatawa-answer/:id',component:EditFatawaAnswerComponent},
+  {path:'list-fatawa-answer',component:ListFatawaAnswerComponent}
 ];
 
 @NgModule({

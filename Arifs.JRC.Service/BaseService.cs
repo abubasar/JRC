@@ -32,6 +32,8 @@ namespace Arifs.JRC.Service
             return queryable;
         }
 
+       
+
 
 
         public bool Add(T model)
@@ -101,10 +103,9 @@ namespace Arifs.JRC.Service
             while (true)
             {
                 count++;
-                referenceNo = "QA:" + count.ToString().PadLeft(6, '0');
+                referenceNo = "SL:" + count.ToString().PadLeft(6, '0');
                 return referenceNo;
             }
-
 
         }
 

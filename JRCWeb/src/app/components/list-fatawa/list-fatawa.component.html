@@ -1,3 +1,52 @@
-<p>
-  list-fatawa works!
-</p>
+<div class="container">
+
+    <div class="row">
+      
+      
+      <div class="col-sm-10">
+        <div>
+            <form class="form-inline mt-4">
+                <input type="text" class="form-control" name="keyword" [(ngModel)]="searchRequest.keyword" (keypress)="search()" placeholder="SEARCH"><br>
+              
+              </form>
+        </div>
+          
+          <div class="card mt-4" *ngFor="let model of models">
+       
+              <div class="card-body">
+                  <h5  class="card-title text-success">{{model.questioner}}-{{model.address}}</h5>
+                 
+                  <h5 class="card-text">
+                  {{model.questionNo}}.প্রশ্ন
+                
+                  </h5>
+                
+                      <div [innerHTML]="model.question"></div>
+                  
+                  
+                    <h5 class="card-text">উত্তর</h5>
+                   
+                        <div [innerHTML]="model.answer"></div>
+                      
+                      
+        
+               
+              </div>
+        </div>
+        
+  
+   
+   
+   
+      </div>
+  
+      <div class="col-sm-2">
+          <h2 class="my-4">Tags</h2>
+          <div *ngFor="let tag of tags">
+           
+          <a style="cursor: pointer;" (click)="searchByTag(tag.name)" class="bg-light">{{tag.name}}</a>
+         
+          </div>
+  
+      </div>
+  </div>

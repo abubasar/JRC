@@ -65,6 +65,8 @@ namespace Arifs.JRC.Web.Api
             services.BuildServiceProvider().GetService<DataContext>().Database.Migrate();
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IArticleService, ArticleService>();
+            services.AddScoped<IArticleRepository, ArticleRepository>();
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped(typeof(IBaseService<,,>), typeof(BaseService<,,>));
           

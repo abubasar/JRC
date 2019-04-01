@@ -24,7 +24,7 @@ article:any
   }
 
   get(id:string){
-   this.http.get('http://localhost:25442/api/article/get/'+id).subscribe(res=>{
+   this.http.get('http://localhost:25442/api/article/getDetail/'+id).subscribe(res=>{
      console.log(res)
 this.article=res;
    })

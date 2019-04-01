@@ -11,10 +11,24 @@ using Microsoft.AspNetCore.Mvc;
 namespace Arifs.JRC.Web.Api.Controllers
 {
     [Route("api/article")]
+    [ApiController]
     public class ArticleController : BaseController<Article, ArticleRequestModel, ArticleViewModel>
     {
-        public ArticleController(IBaseService<Article, ArticleRequestModel, ArticleViewModel> service) : base(service)
+         private readonly IArticleService articleService;
+        
+        public ArticleController(IBaseService<Article, ArticleRequestModel, ArticleViewModel> service, IArticleService articleService) : base(service)
         {
+         this.articleService = articleService;
+        }
+
+
+        [Produces("application/json")]
+        [Route("getDetail/{id}")]
+        [HttpGet]
+        public IActionResult GetArticleById(string id)
+        {
+            Article article = articleService.GetArticleById(id);
+            return Ok(article);
         }
     }
 }

@@ -18,6 +18,7 @@ export class AuthorListComponent extends BaseComponent<any> implements OnInit {
 
   ngOnInit() {
     this.search();
+    this.searchForPaging();
   }
 
 }

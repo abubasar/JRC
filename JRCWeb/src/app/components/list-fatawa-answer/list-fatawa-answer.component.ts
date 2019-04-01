@@ -1,13 +1,15 @@
+import { FatawaAnswerService } from './../../services/fatawa-answer.service';
 import { Component, OnInit } from '@angular/core';
+import { BaseComponent } from '../base/base.component';
 import { BaseRequestModel } from 'src/app/entities/base-request-model';
-import { FatawaAnswerService } from 'src/app/services/fatawa-answer.service';
 
 @Component({
-  selector: 'app-list-fatawa',
-  templateUrl: './list-fatawa.component.html',
-  styleUrls: ['./list-fatawa.component.scss']
+  selector: 'app-list-fatawa-answer',
+  templateUrl: './list-fatawa-answer.component.html',
+  styleUrls: ['./list-fatawa-answer.component.scss']
 })
-export class ListFatawaComponent implements OnInit {
+export class ListFatawaAnswerComponent  implements OnInit {
+ 
 
   constructor(private service:FatawaAnswerService) {
     this.searchRequest=new BaseRequestModel();
@@ -83,6 +85,24 @@ export class ListFatawaComponent implements OnInit {
   
   }
   
- 
+  goto(page: number): void {
+    this.searchRequest.page = page;
+    this.search();
+  }
 
-}
+  delete(id:number){
+    var result=confirm("Are You sure to delete this");
+    if(result){
+      this.service.delete(id).subscribe(res=>{
+        this.search();
+       // this.router.navigate(['list'])
+      },error=>{
+        console.log(error);
+      })
+    }
+      }
+  
+  
+  }
+
+

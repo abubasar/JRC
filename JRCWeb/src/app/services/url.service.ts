@@ -9,10 +9,12 @@ article:string
 category:string
 author:string
 tag:string
+fatawaAnswer:string
   constructor() { 
     this.article=this.baseUrl+'article'
     this.category=this.category+'category'
     this.tag=this.baseUrl+'tag'
     this.author=this.baseUrl+'author'
+    this.fatawaAnswer=this.baseUrl+'fatawa-answer'
   }
 }

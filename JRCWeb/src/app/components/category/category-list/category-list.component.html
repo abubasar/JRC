@@ -1,17 +1,19 @@
-<form>
-  <div class="form-inline">
-     <input class="form-control" type="text" name="keyword" [(ngModel)]="searchRequest.keyword" (keypress)="search()" placeholder="Search By keyword">
-    
-  </div>
-</form>
-
-
 
 <div class="container">
-  <div class="row">
-    <table class="table table-hover">
-      <thead>
-          &nbsp;  <a [routerLink]="['/add-category']" class="btn btn-info btn-xs float-right"><b>+</b>Add New Category</a>
+   
+    <div class="row">
+        <form>
+            <div class="form-group">
+               <input class="form-control" type="text" name="keyword" [(ngModel)]="searchRequest.keyword" (keypress)="search()" placeholder="বাংলায় সার্চ করুন">
+              
+            </div>
+          </form>
+    </div>
+    <div class="row">
+      <table class="table table-hover">
+        <thead>
+            &nbsp;  <a [routerLink]="['/add-category']" class="btn btn-xs btn-primary d-flex justify-content-center"><b>+</b>নতুন বিভাগ যোগ করুন</a>
+  
         <tr>
           <th (click)="sort('name')">Category Name</th>
          

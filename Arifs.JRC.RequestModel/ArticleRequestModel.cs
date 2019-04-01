@@ -10,6 +10,7 @@ namespace Arifs.JRC.RequestModel
 {
     public class ArticleRequestModel : BaseRequestModel<Article>
     {
+      
         public string Category { get; set; }
         public string Author { get; set; }
         public string Tag { get; set; }
