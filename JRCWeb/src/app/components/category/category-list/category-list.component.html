@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let category of categories">
+        <tr *ngFor="let category of models">
           <td>{{category.name}}</td>
          
           <td> <a class="btn btn-primary" type="button" [routerLink]="['/edit-category/',category.id]"><i class="fa fa-pencil"></i></a></td>

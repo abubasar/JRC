@@ -37,7 +37,9 @@ namespace Arifs.JRC.RequestModel
                 this.ExpressionObject = x => x.Tag.Name.Contains(Tag);
             }
 
-
+            this.ExpressionObject = x => (x.Tag.Name.Contains(Tag) || String.IsNullOrEmpty(Tag))
+                                         && (x.Author.Name.Contains(Author) || String.IsNullOrEmpty(Author))
+                                         && (x.Category.Name.Contains(Category) || String.IsNullOrEmpty(Category));
 
             return this.ExpressionObject;
         }

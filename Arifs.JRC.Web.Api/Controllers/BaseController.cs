@@ -53,6 +53,7 @@ namespace Arifs.JRC.Web.Api.Controllers
             }
 
             model.Id = Guid.NewGuid().ToString();
+            
             model.Created=DateTime.Now;
 
             var add = service.Add(model);

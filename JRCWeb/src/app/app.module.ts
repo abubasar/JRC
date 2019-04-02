@@ -18,7 +18,7 @@ import { CategoryService } from './services/category.service';
 import { TagService } from './services/tag.service';
 import { NavComponent } from './components/nav/nav.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { AskFatawaComponent } from './components/ask-fatawa/ask-fatawa.component';
+import { AskFatawaComponent } from "./components/ask-fatawa/ask-fatawa.component";
 import { ListFatawaComponent } from './components/list-fatawa/list-fatawa.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
@@ -40,6 +40,7 @@ import { AddFatawaAnswerComponent } from './components/add-fatawa-answer/add-fat
 import { EditFatawaAnswerComponent } from './components/edit-fatawa-answer/edit-fatawa-answer.component';
 import { ListFatawaAnswerComponent } from './components/list-fatawa-answer/list-fatawa-answer.component';
 import { FatawaAnswerService } from './services/fatawa-answer.service';
+import { AskedFatawaComponent } from './components/asked-fatawa/asked-fatawa.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { FatawaAnswerService } from './services/fatawa-answer.service';
     AllArticleComponent,
     AddFatawaAnswerComponent,
     EditFatawaAnswerComponent,
-    ListFatawaAnswerComponent
+    ListFatawaAnswerComponent,
+    AskedFatawaComponent
   ],
   imports: [
     BrowserModule,

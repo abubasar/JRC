@@ -47,7 +47,7 @@ authors:any[]
     var r=new BaseRequestModel();
     r.page=-1;
     r.orderBy="createdBy"
-    this.categoryService.searchCategory(r).subscribe(res=>{
+    this.categoryService.search(r).subscribe(res=>{
              this.categories=res;
              console.log(res)
     });

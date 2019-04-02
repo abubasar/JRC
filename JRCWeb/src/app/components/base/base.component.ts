@@ -28,12 +28,9 @@ abstract reset();
 createInstance<Entity>(c:new()=>Entity):Entity{
   return new c();
 }
- //query controller start here
  
-
  edit(){
   this.service.edit(this.model).subscribe(res=>{
-   // this.router.navigate(['list']);
     this.reset();
     console.log('success');
   },error=>{
@@ -46,7 +43,6 @@ delete(id:number){
   if(result){
     this.service.delete(id).subscribe(res=>{
       this.search();
-     // this.router.navigate(['list'])
     },error=>{
       console.log(error);
     })
@@ -56,7 +52,7 @@ delete(id:number){
 
 
 
- models:T[]
+models:T[]
 searchRequest:BaseRequestModel
 totalCount:number=0
 
@@ -86,13 +82,8 @@ search(){
     
     this.models=res;
   
-
-    
-   
-   
     if (this.models.length === 0) {
       console.log('No search result found');
-      alert('No search result found');
     }
     console.log(this.models);
   },error=>{
@@ -117,8 +108,9 @@ this.search();
 next(){
   if(this.searchRequest.totalPage-this.searchRequest.page>0){
     this.searchRequest.page=this.searchRequest.page+1;
+    this.search();
   }
-  this.search();
+  
 
 }
 

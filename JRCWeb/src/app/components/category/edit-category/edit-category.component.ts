@@ -1,4 +1,4 @@
-import { Category } from './../../../category';
+
 import { HttpClient } from '@angular/common/http';
 import { CategoryService } from './../../../services/category.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditCategoryComponent extends BaseComponent<any> implements OnInit {
   reset() {
-    this.model=new Category();
+    this.model=new Entity();
   }
 category:any
   constructor(public service:CategoryService,private activatedRoute:ActivatedRoute,private http:HttpClient) {
@@ -25,16 +25,12 @@ category:any
     
   }
 
-  editCategory(){
-    this.service.editCategory(this.category).subscribe(res=>{
-      console.log("success")
-    })
-  }
+ 
 
   get(id:string){
    this.http.get('http://localhost:25442/api/category/get/'+id).subscribe(res=>{
      console.log(res)
-this.category=res;
+this.model=res;
    })
   }
 

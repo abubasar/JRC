@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
-import { User } from 'src/app/user';
 import { FatawaService } from 'src/app/services/fatawa.service';
-import { Fatawa } from 'src/app/entities/fatawa';
+
+import { BaseComponent } from '../base/base.component';
+import { Entity } from 'src/app/entities/entity';
 
 @Component({
   selector: 'app-ask-fatawa',
   templateUrl: './ask-fatawa.component.html',
   styleUrls: ['./ask-fatawa.component.scss']
 })
-export class AskFatawaComponent implements OnInit {
+export class AskFatawaComponent extends BaseComponent<any> implements OnInit {
 
-  model:Fatawa
-  constructor(private service:FatawaService) { 
-   this.model=new Fatawa();
+  //model:Fatawa
+  constructor(public service:FatawaService) { 
+    super(service)
+  // this.model=new Fatawa();
   }
 
   ngOnInit() {
@@ -27,6 +27,6 @@ export class AskFatawaComponent implements OnInit {
    })
  }
  reset(){
-   this.model=new Fatawa();
+   this.model=new Entity();
  }
 }

@@ -38,7 +38,7 @@ category:string="All"
     var r=new BaseRequestModel();
     r.page=-1;
     r.orderBy="createdBy"
-    this.categoryService.searchCategory(r).subscribe(res=>{
+    this.categoryService.search(r).subscribe(res=>{
              this.categories=res;
              console.log(res)
     });
@@ -76,7 +76,7 @@ category:string="All"
         console.log('No search result found');
        this.models=[
          {
-           "headLine":"এখনও কোন লেখা অন্তর্ভুক্ত করা হই  নি"
+           "headLine":"এখনও কোন লেখা অন্তর্ভুক্ত করা হই নি"
          }
        ]
       }

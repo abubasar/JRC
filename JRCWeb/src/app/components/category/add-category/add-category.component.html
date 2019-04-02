@@ -9,11 +9,11 @@
           <form>
               <div class="form-group">
                   <label for="name">Category Name</label>
-                  <input type="text" class="form-control" name="name" id="name" [(ngModel)]="category.name">
+                  <input type="text" class="form-control" name="name" id="name" [(ngModel)]="model.name">
                   </div>
           
           <div class="text-right">
-            <button type="submit" class="btn btn-primary btn-block btn-lg" (click)="addCategory()">Save</button>
+            <button type="submit" class="btn btn-primary btn-block btn-lg" (click)="save()">Save</button>
           </div>
          
           <div class="text-right">
