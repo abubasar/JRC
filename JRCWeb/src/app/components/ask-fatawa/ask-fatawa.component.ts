@@ -11,21 +11,16 @@ import { Entity } from 'src/app/entities/entity';
 })
 export class AskFatawaComponent extends BaseComponent<any> implements OnInit {
 
-  //model:Fatawa
+
   constructor(public service:FatawaService) { 
     super(service)
-  // this.model=new Fatawa();
+ 
   }
 
   ngOnInit() {
   }
 
- addFatawa(){
-   this.service.addFatawa(this.model).subscribe(res=>{
-     this.reset();
-     console.log(res);
-   })
- }
+ 
  reset(){
    this.model=new Entity();
  }

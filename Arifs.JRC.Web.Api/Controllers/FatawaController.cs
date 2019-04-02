@@ -22,9 +22,9 @@ namespace Arifs.JRC.Web.Api.Controllers
         }
 
        
-        [HttpPost]
-        [Route("add-fatawa")]
-        public IActionResult Save(Fatawa model)
+        [HttpPut]
+        [Route("checked")]
+        public IActionResult Patch(Fatawa model)
         {
 
             if (!ModelState.IsValid)
@@ -32,10 +32,9 @@ namespace Arifs.JRC.Web.Api.Controllers
                 return BadRequest("Bhai please sob field fill up koren");
             }
 
-            model.Id = Guid.NewGuid().ToString();
-            model.Created = DateTime.Now;
+           
 
-            var add = service.Add(model);
+            var add = service.Edit(model);
 
             return Ok(add);
         }

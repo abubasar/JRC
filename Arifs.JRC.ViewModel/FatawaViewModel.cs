@@ -14,6 +14,7 @@ namespace Arifs.JRC.ViewModel
             this.Phone = fatawa.Phone;
             this.Email = fatawa.Email;
             this.Question = fatawa.Question;
+            this.IsAnswered = fatawa.IsAnswered;
                 
         }
 
@@ -22,5 +23,6 @@ namespace Arifs.JRC.ViewModel
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Question { get; set; }
+        public bool IsAnswered { get; set; }
     }
 }

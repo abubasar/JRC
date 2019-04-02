@@ -19,5 +19,7 @@ namespace Arifs.JRC.DataModel
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Fatawa> Fatawas { get; set; }
         public virtual DbSet<FatawaAnswer> FatawaAnswers { get; set; }
+
+
     }
 }
