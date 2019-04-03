@@ -41,6 +41,7 @@ import { EditFatawaAnswerComponent } from './components/edit-fatawa-answer/edit-
 import { ListFatawaAnswerComponent } from './components/list-fatawa-answer/list-fatawa-answer.component';
 import { FatawaAnswerService } from './services/fatawa-answer.service';
 import { AskedFatawaComponent } from './components/asked-fatawa/asked-fatawa.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { AskedFatawaComponent } from './components/asked-fatawa/asked-fatawa.com
     AddFatawaAnswerComponent,
     EditFatawaAnswerComponent,
     ListFatawaAnswerComponent,
-    AskedFatawaComponent
+    AskedFatawaComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-list-article',
   templateUrl: './list-article.component.html',
-  styleUrls: ['./list-article.component.sass']
+  styleUrls: ['./list-article.component.scss']
 })
 export class ListArticleComponent extends BaseComponent<any> implements OnInit {
   reset() {

@@ -1,0 +1,30 @@
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <h3>Bootstrap Sidebar</h3>
+    </div>
+
+    <ul class="list-unstyled components">
+        <p>Dummy Heading</p>
+        <li class="active">
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">বিভাগ</a>
+            <ul  class="collapse list-unstyled" id="homeSubmenu">
+                <li *ngFor="let category of categories">
+                    <a style="cursor: pointer;" (click)="searchByCategory(category.name)" class="list-group-item">{{category.name}}</a>
+                </li>
+               
+            </ul>
+        </li>
+      
+        <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">লেখকগণ</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li *ngFor="let author of authors">
+                    <a style="cursor: pointer;" (click)="searchByAuthor(author.name)" class="list-group-item">{{author.name}}</a>
+                </li>
+               
+            </ul>
+        </li>
+        
+    </ul>
+
+</nav>
