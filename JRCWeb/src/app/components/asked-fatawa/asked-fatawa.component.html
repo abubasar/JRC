@@ -20,6 +20,7 @@
               <th (click)="sort('phone')">ফোন</th>
               <th (click)="sort('email')">ই-মেইল</th>
               <th (click)="sort('question')">প্রশ্ন</th>
+              <th (click)="sort('question')">কমপ্লিট</th>
              
               <th>Actions</th>
     
@@ -32,8 +33,9 @@
               <td>{{model.phone}}</td>
               <td>{{model.email}}</td>
               <td>{{model.question}}</td>
+              <td>{{model.isAnswered}}</td>
              
-              <td> <a class="btn btn-primary" type="button" [routerLink]="['/edit-fatawa-answer/',model.id]"><i class="fa fa-pencil"></i></a></td>
+              <td> <a class="btn btn-primary" type="button" (click)="isComplete(model.id)"><i class="fa fa-check"></i></a></td>
               <td> <button class="btn btn-danger" type="button" (click)="delete(model.id)"><i class="fa fa-remove"></i></button></td>
             </tr>
           </tbody>

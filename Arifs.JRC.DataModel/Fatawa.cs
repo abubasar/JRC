@@ -14,5 +14,6 @@ namespace Arifs.JRC.DataModel
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Question { get; set; }
+        public bool IsAnswered { get; set; }
     }
 }
