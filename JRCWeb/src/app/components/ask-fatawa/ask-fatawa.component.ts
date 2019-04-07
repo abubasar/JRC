@@ -19,7 +19,14 @@ export class AskFatawaComponent extends BaseComponent<any> implements OnInit {
 
   ngOnInit() {
   }
-
+  saveFatawa(){
+    this.service.saveFatawa(this.model).subscribe(res=>{
+      this.reset();
+      console.log('success');
+    },error=>{
+      console.log(error)
+    });
+  }
  
  reset(){
    this.model=new Entity();

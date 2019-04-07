@@ -12,7 +12,7 @@ export class FatawaService extends BaseService<any> {
     super(http,url.fatawa)
   }
 
-  addFatawa(model:any):Observable<any>{
-    return this.http.post('http://localhost:25442/api/fatawa/add-fatawa',model);
+  saveFatawa(model:any):Observable<any>{
+    return this.http.post('http://localhost:25442/api/fatawa/addFatawa',model);
   }
 }

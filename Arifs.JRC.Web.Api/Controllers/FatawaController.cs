@@ -38,5 +38,23 @@ namespace Arifs.JRC.Web.Api.Controllers
 
             return Ok(add);
         }
+
+        [HttpPost]
+        [Route("addFatawa")]
+        public IActionResult POSTFatawa(Fatawa model)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Bhai please sob field fill up koren");
+            }
+
+            model.Id = Guid.NewGuid().ToString();
+
+            model.Created = DateTime.Now;
+
+            var add = service.Add(model);
+            return Ok(add);
+        }
     }
 }
