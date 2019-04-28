@@ -15,6 +15,7 @@ using Arifs.JRC.Service;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using WebPush;
 
 namespace Arifs.JRC.Web.Api
 {
@@ -30,6 +31,12 @@ namespace Arifs.JRC.Web.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var vapidDetails = new VapidDetails(
+                Configuration.GetValue<string>("VapidDetails:Subject"),
+                Configuration.GetValue<string>("VapidDetails:PublicKey"),
+                Configuration.GetValue<string>("VapidDetails:PrivateKey"));
+            services.AddTransient(c => vapidDetails);
+
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddCors();

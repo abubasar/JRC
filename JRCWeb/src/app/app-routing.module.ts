@@ -1,3 +1,4 @@
+
 import { AskedFatawaComponent } from './components/asked-fatawa/asked-fatawa.component';
 import { ListFatawaComponent } from './components/list-fatawa/list-fatawa.component';
 import { ListFatawaAnswerComponent } from './components/list-fatawa-answer/list-fatawa-answer.component';
@@ -25,6 +26,7 @@ import { EditTagComponent } from './components/tag/edit-tag/edit-tag.component';
 import { TagListComponent } from './components/tag/tag-list/tag-list.component';
 import { EditCategoryComponent } from './components/category/edit-category/edit-category.component';
 import { EditFatawaAnswerComponent } from './components/edit-fatawa-answer/edit-fatawa-answer.component';
+import { BroadcastComponent } from './broadcast/broadcast.component';
 
 
 
@@ -55,7 +57,8 @@ const routes: Routes = [
   {path:'add-fatawa-answer',component:AddFatawaAnswerComponent,canActivate:[AuthGuard]},
   {path:'edit-fatawa-answer/:id',component:EditFatawaAnswerComponent,canActivate:[AuthGuard]},
   {path:'list-fatawa-answer',component:ListFatawaAnswerComponent,canActivate:[AuthGuard]},
-  {path:'asked-fatawa',component:AskedFatawaComponent,canActivate:[AuthGuard]}
+  {path:'asked-fatawa',component:AskedFatawaComponent,canActivate:[AuthGuard]},
+  {path:'broadcast',component:BroadcastComponent}
 ];
 
 @NgModule({

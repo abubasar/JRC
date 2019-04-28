@@ -63,6 +63,10 @@
                  <li class="nav-item" routerLinkActive="active">
                    <a class="nav-link" *ngIf="_authService.loggedIn()" [routerLink]="['/asked-fatawa']">Asked</a>
                  </li>
+
+                 <li class="nav-item" routerLinkActive="active">
+                  <a class="nav-link" [routerLink]="['/broadcast']">Broadcast</a>
+                </li>
                  <li class="nav-item" routerLinkActive="active">
                      <a class="nav-link"style="cursor: pointer;" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Logout</a>  
                    </li>

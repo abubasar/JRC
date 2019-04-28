@@ -135,6 +135,22 @@ namespace Arifs.JRC.DataModel.Migrations
                     b.ToTable("FatawaAnswers");
                 });
 
+            modelBuilder.Entity("Arifs.JRC.DataModel.PushSubscriptionModel", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Auth");
+
+                    b.Property<string>("EndPoint");
+
+                    b.Property<string>("P256Dh");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PushSubscriptionModels");
+                });
+
             modelBuilder.Entity("Arifs.JRC.DataModel.Tag", b =>
                 {
                     b.Property<string>("Id")

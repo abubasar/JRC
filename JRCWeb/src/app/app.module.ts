@@ -42,6 +42,10 @@ import { ListFatawaAnswerComponent } from './components/list-fatawa-answer/list-
 import { FatawaAnswerService } from './services/fatawa-answer.service';
 import { AskedFatawaComponent } from './components/asked-fatawa/asked-fatawa.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { NotificationService } from './core/generated';
+import { BroadcastComponent } from './broadcast/broadcast.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +73,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     EditFatawaAnswerComponent,
     ListFatawaAnswerComponent,
     AskedFatawaComponent,
-    SidebarComponent
+    SidebarComponent,
+    BroadcastComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +82,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     HttpClientModule,
     FormsModule,
     CKEditorModule,
-    OwlModule 
+    OwlModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) 
 
   ],
   providers: [
@@ -90,11 +96,13 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     FatawaAnswerService,
     AuthGuard,
     AuthService,
+    NotificationService,
     {
       provide:HTTP_INTERCEPTORS,
       useClass:TokenInterceptorService,
       multi:true
-    }
+    },
+    { provide: "BASE_API_URL", useValue: environment.apiUrl }
   ],
   bootstrap: [AppComponent]
 })

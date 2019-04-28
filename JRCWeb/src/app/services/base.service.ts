@@ -10,7 +10,7 @@ import { BaseRequestModel } from '../entities/base-request-model';
 export class BaseService<T> {
 commandUrl:string
 
-  constructor(public http:HttpClient,url:string) {
+  constructor(public http:HttpClient,public url:string) {
     this.commandUrl=url
    }
 

@@ -24,13 +24,13 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ],
             "styles": [
               "src/styles.scss",
               "./node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
               "./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css"
-            
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
@@ -61,7 +61,9 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "src/ngsw-config.json"
             }
           }
         },
@@ -95,7 +97,8 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ]
           }
         },

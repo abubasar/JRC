@@ -12,7 +12,7 @@ namespace Arifs.JRC.DataModel
         {
              
         }
-
+        public virtual DbSet<PushSubscriptionModel> PushSubscriptionModels { get; set; }
         public virtual DbSet<Article> Articles { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
