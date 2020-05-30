@@ -6,7 +6,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.3" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.5.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -14,15 +16,6 @@
     <ProjectReference Include="..\Arifs.JRC.Repository\Arifs.JRC.Repository.csproj" />
     <ProjectReference Include="..\Arifs.JRC.RequestModel\Arifs.JRC.RequestModel.csproj" />
     <ProjectReference Include="..\Arifs.JRC.ViewModel\Arifs.JRC.ViewModel.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Microsoft.IdentityModel.Tokens">
-      <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.tokens\5.3.0\lib\netstandard2.0\Microsoft.IdentityModel.Tokens.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IdentityModel.Tokens.Jwt">
-      <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\system.identitymodel.tokens.jwt\5.3.0\lib\netstandard2.0\System.IdentityModel.Tokens.Jwt.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

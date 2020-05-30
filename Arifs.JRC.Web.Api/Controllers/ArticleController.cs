@@ -30,5 +30,17 @@ namespace Arifs.JRC.Web.Api.Controllers
             Article article = articleService.GetArticleById(id);
             return Ok(article);
         }
+
+
+        [Produces("application/json")]
+        [HttpPost]
+        [Route("PagedList")]
+        public IActionResult SearchArticle(ArticleRequestModel  requestModel)
+        {
+
+            var data=   articleService.SearchArticle(requestModel);
+
+            return Ok(data);
+        }
     }
 }

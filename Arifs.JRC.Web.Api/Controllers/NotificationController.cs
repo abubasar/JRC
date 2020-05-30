@@ -66,9 +66,5 @@ namespace Arifs.JRC.Web.Api.Controllers
 
 
        
-        public ContentResult Get()
-        {
-            return Content(_options.PublicKey, "text/plain");
-        }
     }
 }

@@ -45,5 +45,11 @@ namespace Arifs.JRC.Repository
 
             return model;
         }
+
+
+       public IQueryable<Article> GetArticles()
+        {
+            return context.Articles;
+        }
     }
 }

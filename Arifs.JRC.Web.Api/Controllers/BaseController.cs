@@ -29,9 +29,10 @@ namespace Arifs.JRC.Web.Api.Controllers
                 return BadRequest("please vi sob field fill up koren");
             }
             var searchResult = service.Search(request);
+
             return Ok(searchResult);
         }
-
+ 
 
         [Route("reference-no")]
         [HttpGet]

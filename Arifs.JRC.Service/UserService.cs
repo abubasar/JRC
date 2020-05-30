@@ -20,7 +20,7 @@ namespace Arifs.JRC.Service
         }
         private List<User> _users = new List<User>
         {
-            new User { Id = 11234, Username = "test123", Password = "test123" }
+            new User { Id = 11234, Username = "admin", Password = "Ubaidollah1" }
         };
 
         public User Authenticate(string username, string password)
